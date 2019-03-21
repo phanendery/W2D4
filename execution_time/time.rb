@@ -10,7 +10,7 @@ def largest_contiguous_subsum(array)
     array.each_with_index do |el, i|
         sub << [el]
         (i+1...array.length).each do |j|
-            sub << array[i..j]
+            sub << array[i..j] #O(n) from slicing 0
         end
     end
     sum = sub.first.sum
@@ -42,5 +42,5 @@ def max(a,b)
     b
 end
 
-list = [3,5,-2,1,-8,1,-8]
+list = [5,4,-4,2]
 p faster_contigious_sum(list)  
